@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{C132594A-928C-86DF-54BB-28617E4DB357}</ProjectGuid>
+    <ProjectGuid>{6832F195-A864-FBC1-B4A1-641CE4C408CA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -64,6 +64,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\BallController.cs" />
     <Compile Include="Assets\Mapbox SDK\GoogleARCore\Examples\ComputerVision\Scripts\ComputerVisionController.cs" />
     <Compile Include="Assets\Mapbox SDK\GoogleARCore\Examples\ComputerVision\Scripts\EdgeDetector.cs" />
     <Compile Include="Assets\Mapbox SDK\GoogleARCore\Examples\ComputerVision\Scripts\TextureReader.cs" />
@@ -548,27 +549,41 @@
     <Compile Include="Assets\Mapbox SDK\UnityARInterface\Scripts\ARPointCloudVisualizer.cs" />
     <Compile Include="Assets\Mapbox SDK\UnityARInterface\Scripts\BoundedPlane.cs" />
     <Compile Include="Assets\Resources\Models\InGame\POI Point Bouns\FloatAndRotate.cs" />
+    <Compile Include="Assets\SceneTransManager.cs" />
+    <Compile Include="Assets\Script\PlaceHoop.cs" />
+    <Compile Include="Assets\Script\bollControlScript.cs" />
     <Compile Include="Assets\Scripts\InGame\InGameScene\Data\MissionData.cs" />
+    <Compile Include="Assets\Scripts\InGame\InGameScene\Func\LocationTracker.cs" />
     <Compile Include="Assets\Scripts\InGame\InGameScene\Handler\MissionObjectTouchHandler.cs" />
     <Compile Include="Assets\Scripts\InGame\InGameScene\InGameSceneManager.cs" />
-    <Compile Include="Assets\Scripts\MiniGame\BasketBallGameScene\Script\PlaceHoop.cs" />
-    <Compile Include="Assets\Scripts\MiniGame\BasketBallGameScene\Script\bollControlScript.cs" />
-    <Compile Include="Assets\Scripts\MiniGame\BasketBallGameScene\arfoundation-samples\Assets\Scenes\ImageTracking\TrackedImageInfoManager.cs" />
-    <Compile Include="Assets\Scripts\MiniGame\MinigameDataManager.cs" />
-    <Compile Include="Assets\Scripts\MiniGame\ShootingGameScene\Balloon.cs" />
-    <Compile Include="Assets\Scripts\MiniGame\ShootingGameScene\Shoot.cs" />
-    <Compile Include="Assets\Scripts\MiniGame\ShootingGameScene\SpawnBalloons.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\CarBehaviour.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\CarManager.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\DrivingSurfaceManager.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\PackageBehaviour.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\PackageManager.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\ReticleBehaviour.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\TargetMovement.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\UI_manager.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\CarGameScene\c_manager.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\ShootingGameScene\Behaviour\BalloonBehaviour.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\ShootingGameScene\Component\BalloonShooter.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\ShootingGameScene\Component\BalloonSpawner.cs" />
+    <Compile Include="Assets\Scripts\MiniGame\ShootingGameScene\ShootingGameSceneManager.cs" />
+    <Compile Include="Assets\Scripts\Static\Data\RankItem.cs" />
     <Compile Include="Assets\Scripts\Static\Data\UserData.cs" />
-    <Compile Include="Assets\Scripts\Static\Function\BackendLogin.cs" />
-    <Compile Include="Assets\Scripts\Static\Function\LocationTracker.cs" />
-    <Compile Include="Assets\Scripts\Static\Function\SceneLoader.cs" />
+    <Compile Include="Assets\Scripts\Static\Func\SceneLoader.cs" />
     <Compile Include="Assets\Scripts\Static\StaticManager.cs" />
     <Compile Include="Assets\Scripts\Static\StaticManagers\BackendManager.cs" />
+    <Compile Include="Assets\Scripts\Static\StaticManagers\MinigameDataManager.cs" />
     <Compile Include="Assets\Scripts\Static\StaticManagers\PlayerDataManager.cs" />
     <Compile Include="Assets\Scripts\Static\StaticManagers\PopUpUIManager.cs" />
+    <Compile Include="Assets\Scripts\UI\LoginScene\Func\BackendLogin.cs" />
     <Compile Include="Assets\Scripts\UI\LoginScene\LoginSceneManager.cs" />
     <Compile Include="Assets\Scripts\UI\MainScene\MainSceneManager.cs" />
+    <Compile Include="Assets\Singleton.cs" />
     <Compile Include="Assets\TheBackend\Toolkit\SendQueueMgr.cs" />
+    <Compile Include="Assets\m_Contents.cs" />
+    <Compile Include="Assets\nagagi.cs" />
     <None Include="Assets\Mapbox SDK\UnityARInterface\Examples\Common\Shaders\InstancedSurfaceShader.shader" />
     <None Include="Assets\Mapbox SDK\Mapbox\Examples\2_AstronautGame\AstronautGame\Astronaut\ProjectorLight.shader" />
     <None Include="Assets\Mapbox SDK\MapboxAR\Examples\ARTabletop\Shaders\ClipBox\LICENSE.txt" />
@@ -774,40 +789,40 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="MapboxAccountsUnity">
-      <HintPath>C:/demo/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/MapboxAccounts/net35/MapboxAccountsUnity.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/MapboxAccounts/net35/MapboxAccountsUnity.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.VectorTile.ExtensionMethods">
-      <HintPath>C:/demo/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.ExtensionMethods.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.VectorTile.Geometry">
-      <HintPath>C:/demo/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.Geometry.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.VectorTile.PbfReader">
-      <HintPath>C:/demo/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.PbfReader.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.VectorTile.VectorTileReader">
-      <HintPath>C:/demo/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Mapbox SDK/Mapbox/Core/Plugins/Mapbox/vector-tile-cs/net46/Mapbox.VectorTile.VectorTileReader.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.IO.Compression">
-      <HintPath>C:/demo/Assets/Mapbox SDK/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Mapbox SDK/Mapbox/Core/Plugins/ThirdParty/Mapbox.IO.Compression/net35/Mapbox.IO.Compression.dll</HintPath>
     </Reference>
     <Reference Include="Mapbox.Json">
-      <HintPath>C:/demo/Assets/Mapbox SDK/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Mapbox SDK/Mapbox/Core/Plugins/ThirdParty/Mapbox.Json/Net35/Mapbox.Json.dll</HintPath>
     </Reference>
     <Reference Include="Backend">
-      <HintPath>C:/demo/Assets/TheBackend/Plugins/Backend.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/TheBackend/Plugins/Backend.dll</HintPath>
     </Reference>
     <Reference Include="LitJSON">
-      <HintPath>C:/demo/Assets/TheBackend/Plugins/LitJSON.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/TheBackend/Plugins/LitJSON.dll</HintPath>
     </Reference>
     <Reference Include="TheBackend.iOS">
-      <HintPath>C:/demo/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/TheBackend/Plugins/Android/TheBackend.iOS.dll</HintPath>
     </Reference>
     <Reference Include="TheBackendHashKeySettings">
-      <HintPath>C:/demo/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/TheBackend/Plugins/Settings/TheBackendHashKeySettings.dll</HintPath>
     </Reference>
     <Reference Include="TheBackendSettings">
-      <HintPath>C:/demo/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/TheBackend/Plugins/Settings/TheBackendSettings.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
@@ -1164,70 +1179,70 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Subsystem.Registration">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARSubsystems.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARCore">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARFoundation">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/demo/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.ARCore.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>C:/demo/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="Unity.XR.Management.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>C:/demo/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>C:/demo/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/demo/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>C:/demo/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/demo/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

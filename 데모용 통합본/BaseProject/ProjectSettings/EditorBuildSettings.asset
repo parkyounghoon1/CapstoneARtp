@@ -17,9 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InGame/InGameScene.unity
     guid: bc4eaa96077d0674ebaa8a4da0a4dc3d
-  - enabled: 1
-    path: Assets/Scenes/Minigame/BasketballGameScene.unity
-    guid: b2964a51482bdee4c91a389f521ec3ba
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Minigame/ShootingGameScene.unity
     guid: 94945b8d19c12f745b5cb4ed32679cf0

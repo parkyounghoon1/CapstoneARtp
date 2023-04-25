@@ -6,7 +6,9 @@
 // 수정:
 // - 이수민(2023-04-08) : 대규모 리팩토링(기능 수정, 통합, 재배치), 문서화 작업
 // - 이수민(2023-04-11) : 간단한 사용자 정보 UI 표시기능(최종 버전 아님), 간단한 미션 선택 UI 기능(최종 버전 아님)
-// - 이수민(2023-04-12) : 미션 데이터 위치 변경(아예 고정 시킬 목적)
+// - 이수민(2023-04-12) : 미션 데이터 위치 변경(Resource/Settings/InGame안에 있음.)
+// - 이수민(2023-04-19) : Start() 제거
+// - 이수민(2023-04-19) : JSON 파일 불러오는 방식 변경(안드로이드의 경우 추가)
 //--------------------------------------------------------------
 
 
@@ -19,6 +21,7 @@ using Mapbox.Unity.MeshGeneration.Factories;
 using Mapbox.Unity.Utilities;
 using System.Collections.Generic;
 using System.IO;
+using UnityEngine.Networking;
 
 public class InGameSceneManager : MonoBehaviour
 {
@@ -63,10 +66,10 @@ public class InGameSceneManager : MonoBehaviour
 
 
     //--------------------------------------------------------------
-    // 메소드명 : Start()
+    // 메소드명 : OnEnable()
     // 설명 : 화면 세팅
     //--------------------------------------------------------------
-    void Start() {
+    void OnEnable() {
         LoadMissionData();      // MissionDataSet에서 미션 정보 가져오기
         SetUIUser();            // 유저 데이터 표시 UI 세팅 메소드.
         SetUIComponent();       // 인게임 UI 세팅 메소드.
@@ -95,9 +98,19 @@ public class InGameSceneManager : MonoBehaviour
     // 설명 : MissionDataSet에서 미션 정보 가져와서 _missions에 초기화 시킴.
     //--------------------------------------------------------------
     void LoadMissionData() {
-        string jsonString = File.ReadAllText("Assets/Resources/Settings/InGame/MissionDataSet.json"); // JSON 파일 읽기
-        MissionDataWrapper missionDataWrapper = JsonUtility.FromJson<MissionDataWrapper>(jsonString); // JSON 데이터 파싱
+        string filePath = Path.Combine(Application.streamingAssetsPath, "C:/Users/see48/Desktop/CapstoneARtp-emji-jakupbon/데모용 통합본/BaseProject/Assets/Resources/StreamingAssets/MissionDataSet.json");
+        string jsonString;
+        if (Application.platform == RuntimePlatform.Android) {
+            UnityWebRequest www = UnityWebRequest.Get(filePath);
+            www.SendWebRequest();
+            while (!www.isDone) { }
+            jsonString = www.downloadHandler.text;
+        }else {
+            // Android 이외의 플랫폼에서는 File 클래스를 사용하여 파일을 읽어옵니다.
+            jsonString = File.ReadAllText(filePath);
+        }   
 
+        MissionDataWrapper missionDataWrapper = JsonUtility.FromJson<MissionDataWrapper>(jsonString); // JSON 데이터 파싱
         _missions = missionDataWrapper.missions;
     }
 

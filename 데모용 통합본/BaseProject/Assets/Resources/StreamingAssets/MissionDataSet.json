@@ -1,0 +1,25 @@
+{
+    "missions" : [
+        {
+            "sceneName" : "ShootingGameScene",
+            "latitude": 37.339642,
+            "longitude": 126.734515,
+            "scale": 4,
+            "prefabPath": "ThirdParty/Hovl Studio/Magic effects pack/Prefabs/Magic circles/Magic circle"
+        },
+        {
+            "sceneName" : "CarGameScene",
+            "latitude": 37.340028,
+            "longitude": 126.734696,
+            "scale": 4,
+            "prefabPath": "ThirdParty/Hovl Studio/Magic effects pack/Prefabs/Magic circles/Magic circle 2"
+        },
+        {
+            "sceneName" : "ShootingGameScene",
+            "latitude": 37.341228,
+            "longitude": 126.732975,
+            "scale": 4,
+            "prefabPath": "ThirdParty/Hovl Studio/Magic effects pack/Prefabs/Magic circles/Magic circle"
+        }
+    ]
+}  

@@ -22,13 +22,13 @@ public class PlayerDataManager : MonoBehaviour
     // - userData : 관리할 유저 데이터.
     // - gameDataRowInDate : 데이터 변경 일자에 대한 고유값.
     //--------------------------------------------------------------
-    public UserData userData;
+    public UserData userData = new UserData();
     private string gameDataRowInDate = string.Empty;
     
     
     //--------------------------------------------------------------
     // 메소드명 : Init()
-    // 설명 : 초기화 작업. 얘는 특성상 공란임.
+    // 설명 : 초기화 작업. 일단 지금은 공란임.
     //--------------------------------------------------------------
     public void Init() {
 
@@ -41,9 +41,6 @@ public class PlayerDataManager : MonoBehaviour
     // - 있으면 가져오고, 없으면 새로 하나 만듦.
     //--------------------------------------------------------------
     public void GameDataFind(){
-        if (userData == null) {
-            userData = new UserData();
-        }
         Debug.Log("게임 정보 조회 함수를 호출합니다.");
         var bro = Backend.GameData.GetMyData("USER_DATA", new Where());
         if (bro.IsSuccess()) {
